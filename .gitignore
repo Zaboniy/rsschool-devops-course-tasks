@@ -1,0 +1,17 @@
+# Local Terraform directories
+**/.terraform/*
+
+# Terraform state files
+*.tfstate
+*.tfstate.*
+
+# Log files
+*.log
+terraform.log
+
+# Environment-specific files
+.envrc
+
+# Override files
+*.tfoverride
+*.tfoverride.json
