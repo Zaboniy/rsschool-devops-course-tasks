@@ -1,11 +1,5 @@
-name: Terraform Deployment
-
 on:
-  push:
-    branches:
-      - main
-      - task_1
-  pull_request:
+  workflow_dispatch:
 
 permissions:
   id-token: write

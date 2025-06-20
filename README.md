@@ -1,17 +1,42 @@
-# Terraform + Github actions
+# VPC Terraform Setup
 
-This repository contains Terraform configuration and github actions sample code.
+This repository contains Terraform configuration for VPC setup and github actions to run it in the pipeline.
 
 ---
 
 ## 🛠 Features
 
-- Creates an S3 bucket (`rss-aws-example-bucket`)
-- Stores Terraform state remotely in `rss-aws-tf-states` S3 bucket
-- GitHub Actions workflow with:
-  - `terraform fmt` check
-  - `terraform plan`
-  - `terraform apply` (on `main` branch)
+This infrastructure includes:
+- A VPC
+- 2 public and 2 private subnets
+- Internet Gateway
+- NAT Gateway for internet access from private subnets
+- Routing tables
+- Bastion Host with a security group for SSH access
+
+## Usage:
+
+### This repo uses github actions to run following 1,2,3 steps. Anyway you can run it locally
+
+1. Initialize terraform:
+```bash
+terraform init
+```
+
+2. Plan the infrastructure:
+```bash
+terraform plan
+```
+
+3. Apply the configuration:
+```bash
+terraform apply
+```
+
+4. SSH into bastion host:
+```bash
+ssh ec2-user@<bastion-public-ip> -i <your-key.pem>
+```
 
 ---
 
